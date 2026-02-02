@@ -45,6 +45,7 @@ This project moves from data profiling to actionable financial logic using Postg
 | **03_product_mix_analysis.sql** | **Pareto Analysis:** Identifies "Star Tiers" (High LTV users) using `RANK()` functions. |
 | **04_strategic_retention.sql** | **Win-Back Strategy:** Generates actionable lists of high-value users inactive for >180 days. |
 | **05_scenario_analysis.sql** | **Financial Modeling:** Projects revenue recovery scenarios (Optimistic, Realistic, Pessimistic). |
+| **06_saas_metrics_calculation.sql** | **SaaS Metrics Simulation** Transforms raw activity into ARPU, MRR, and segment-based revenue tiers. |
 
 ## 💰 Financial Impact & Recovery Scenarios
 Instead of assuming a total loss, I modeled three recovery scenarios based on a standard ticket (or ARPU) of $120 USD applied to the 4,385 contactable-at-risk clients.
