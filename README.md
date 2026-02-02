@@ -12,19 +12,21 @@ Using a scenario-based approach, this repository provides a SQL-driven strategy 
 🛡️ Data Quality Audit & Constraints
 Before the financial analysis, a rigorous data integrity check was performed (see 00_data_quality_checks.sql).
 
-Audit Check,Status,Impact / Decision
-Temporal Consistency,✅ Pass,0 records found outside the analysis scope (2022-2026).
-Negative Billable Hours,⚠️ Minor Warning,3 records found with <= 0 hours. Excluded from financial sums.
-Invalid Phone Formats,❌ High Risk,"498 records identified with invalid lengths (<10 digits), in addition to NULL values. Included in Revenue Leakage calculation."
-Duplicate Candidates,ℹ️ Constraint,"Several advisors show multiple same-model entries per day (e.g., Advisor S. Salas, 3 CR-Vs, Aug 15). Decision: Due to lack of VIN/License Plate ID, these are treated as distinct valid services to avoid under-reporting operational volume."
+| Audit Check | Status | Impact / Decision |
+| :--- | :--- | :--- |
+| **Temporal Consistency** | ✅ Pass | 0 records found outside the analysis scope (2022-2026). |
+| **Negative Billable Hours** | ⚠️ Minor Warning | 3 records found with <= 0 hours. Excluded from financial sums. |
+| **Invalid Phone Formats** | ❌ **High Risk** | **498 records** identified with invalid lengths (<10 digits), in addition to NULL values. |
+| **Duplicate Candidates** | ℹ️ Constraint | Multiple same-model entries per day. **Decision:** Treated as distinct services due to lack of VIN. |
 
 💰 Financial Impact & Recovery Scenarios
 Instead of assuming a total loss, I modeled three recovery scenarios based on a standard ticket of $120 USD applied to the 4,385 contactable-at-risk clients.
 
-Scenario,Recovery Rate,Estimated Revenue Recovery (USD)
-Pessimistic,5% (Basic Email/SMS),"$26,310.00"
-Realistic,15% (Targeted Calls + Promo),"$78,930.00"
-Optimistic,30% (Aggressive Retention Strategy),"$157,860.00"
+| Scenario | Recovery Rate | Estimated Revenue Recovery (USD) |
+| :--- | :--- | :--- |
+| **Pessimistic** | 5% | $26,310.00 |
+| **Realistic** | 15% | $78,930.00 |
+| **Optimistic** | 30% | $157,860.00 |
 
 Note: Projections are based on historical service frequency and standard pricing proxies.
 
@@ -44,13 +46,14 @@ Recommendation: Shift "Express Services" (Oil/Filters) specifically to afternoon
 🛠️ Repository Structure
 This project moves from data profiling to actionable financial logic using PostgreSQL.
 
-File,Description,Business Logic
-00_data_quality_checks.sql,Data Audit,"Validates data integrity (dates, duplicates, phone formats) before analysis."
-01_capture_audit.sql,Leakage Diagnosis,Calculates the exact financial loss per advisor due to missing contact data.
-02_operational_capacity.sql,Efficiency Analysis,"Segments ""Morning vs. Afternoon"" shifts to identify idle capacity (""Dead Rent"")."
-03_product_mix_analysis.sql,Market Fit (Pareto),"Identifies the ""Star Models"" (CR-V & HR-V) that drive 80% of revenue."
-04_strategic_retention.sql,Actionable List,"Generates a ""Hot Lead"" list of high-value customers inactive for >180 days."
-05_scenario_analysis.sql,Financial Modeling,"Projects revenue recovery under different conversion rates (5%, 15%, 30%)."
+F| File | Description | Business Logic |
+| :--- | :--- | :--- |
+| **00_data_quality_checks.sql** | Data Audit | Validates data integrity (dates, duplicates, phone formats). |
+| **01_capture_audit.sql** | Leakage Diagnosis | Calculates financial loss per advisor due to missing data. |
+| **02_operational_capacity.sql** | Efficiency Analysis | Segments shifts to identify idle capacity ("Dead Rent"). |
+| **03_product_mix_analysis.sql** | Market Fit | Identifies "Star Models" (CR-V & HR-V) using RANK(). |
+| **04_strategic_retention.sql** | Actionable List | High-value customers inactive for >180 days. |
+| **05_scenario_analysis.sql** | Financial Modeling | Revenue recovery projections (5%, 15%, 30%). |
 
 ⚖️ Proposed Strategic Actions
 Based on the data, the following trade-offs are recommended for management review:
