@@ -6,6 +6,15 @@
 **The Problem:** Identifying "Revenue Leakage" in a B2B service platform (Honda Dealership) where 35% of the user base lacked valid contact data, preventing re-engagement.
 **The Solution:** I built a SQL-based simulation to treat operational logs as SaaS activity data, modeling Churn Risk and Infrastructure Efficiency.
 **The Impact:** Modeled a **$79,830 USD** annual revenue recovery opportunity (Realistic Scenario) by implementing a "Win-Back" strategy for high-LTV accounts.
+ 
+## 🚀 Strategic Impact & Skills
+
+**Target Roles:** Data Analyst | Junior Analytics Engineer | RevOps Analyst | SaaS Operations
+
+**Core Competencies Demonstrated:**
+* **Business-First SQL:** Window Functions (`RANK()`), CTEs, and conditional logic used for **Production-oriented analysis**.
+* **SaaS Metrics Modeling:** Translation of operational logs into **MRR simulations**, **Churn Proxies**, and **ARPU**.
+* **Financial Strategy:** Scenario modeling and **Pareto Analysis** to drive leadership decision-making.
 
 ---
 
@@ -19,6 +28,17 @@ I translated physical service events into digital subscription concepts to demon
 | **Advisor Name** | **Customer Success Manager (CSM)** | Evaluating Account Manager performance. |
 | **Morning vs. Afternoon Shift** | **Server Load / Cloud Capacity** | Optimizing AWS/Azure fixed costs during idle times. |
 | **Car Models (CR-V, HR-V)** | **Subscription Tiers** | Identifying High-LTV segments for upsell. |
+
+---
+
+## 🧭 Project Workflow
+```mermaid
+graph TD
+    A[Raw Operational Logs] -->|Cleaning & ETL| B[Refined Business Events]
+    B -->|User Mapping| C[Activity Sessions]
+    C -->|Gap Analysis| D[Churn Risk Identification]
+    D -->|Financial Modeling| E[Revenue Recovery Scenarios]
+    E -->|Strategic Insight| F[Leadership Decision Making]
 
 ---
 
@@ -76,14 +96,6 @@ Limitations: Churn is inferred from inactivity, not explicit cancellations. Reve
 
 Next Steps: Validate churn thresholds with historical retention curves and incorporate "Cost of Intervention" to model net ROI.
 
----
-
-## 🛠️ Technical Stack
-Production-oriented SQL: Window Functions (RANK(), OVER), CTEs, and Conditional Aggregation.
-
-Business Intelligence: Translating raw logs into actionable KPIs (Churn Proxy, Utilization %, ARPU).
-
-Financial Modeling: Scenario analysis based on data-driven evidence.
 ---
 
 > *Author: Alejandro Diaz | Data Analyst*
