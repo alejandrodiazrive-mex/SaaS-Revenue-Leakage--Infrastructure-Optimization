@@ -55,7 +55,7 @@ This project follows a strict ETL (Extract, Transform, Load) logic, separating d
 | `05_retention_strategy.sql` | **Actionable Churn Logic** |Segments users inactive for >180 days. (180 days chosen to avoid seasonal false positives). |
 | `06_scenario_modeling.sql` | **Financial Projections** | Uses conservative ARPU ($120) to compare recovery outcomes. |
 | `07_saas_metrics.sql` | **Simulation** | **North Star Metrics**: Calculates Inactivity Rates (Churn Proxy) and Revenue Exposure per Tier. |
-
+| `08_saas_mrr_analysis.sql` | **MRR, logo churn, revenue churn** | Simulates core SaaS metrics using activity-based account proxies and highlights net growth vs churn dynamics. |
 ---
 
 ## ⚖️ Strategic Assumptions & Trade-offs
