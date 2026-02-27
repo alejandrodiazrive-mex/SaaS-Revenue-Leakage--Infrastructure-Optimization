@@ -1,0 +1,1 @@
+This folder contains the original exploratory scripts. Although the business logic (Unit Economics, MRR, Churn) is sound, this static approach lacked quality testing, modularity, and was not scalable in the cloud. All the code here has been refactored and migrated to the dbt architecture located in the main folder.
