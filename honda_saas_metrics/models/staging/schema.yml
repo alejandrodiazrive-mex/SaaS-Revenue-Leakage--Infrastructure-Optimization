@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_service_logs
+    description: "Base layer for operational logs. Standardizes names and cleans up anomalies.."
+    columns:
+      - name: service_ticket_id
+        tests:
+          - unique
+          - not_null
+      
+      - name: billable_hours
+        description: "Billable hours. They cannot be negative.."
+        tests:
+          - accepted_values:
+              values: ['> 0']
+              config:
+                quote: false
+      
+      - name: appointment_date
+        tests:
+          - not_null
