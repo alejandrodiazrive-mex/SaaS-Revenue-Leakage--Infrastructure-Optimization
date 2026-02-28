@@ -25,6 +25,7 @@ graph TD
 ```
 ---
 ## 📂 Repository Structure
+
 honda_saas_metrics/
 │
 ├── models/
@@ -41,6 +42,7 @@ honda_saas_metrics/
 Translating physical operations into scalable SaaS metrics to drive Revenue Operations (RevOps).
 
 | Operational Concept      | SaaS Equivalent        | Business Application                                   |
+|--------------------------|------------------------|--------------------------------------------------------|
 | Missing Phone Number     | Incomplete Profile     | Prevents re-engagement & increases Churn Risk          |
 | Service Appointment      | Active User Session    | Measuring DAU/MAU (Engagement)                         |
 | Morning vs. Afternoon    | Server Load            | Optimizing fixed costs during idle times               |
@@ -52,9 +54,11 @@ Translating physical operations into scalable SaaS metrics to drive Revenue Oper
 The fct_revenue_leakage mart calculates recovery potential using a conservative $120 USD ARPU.
 
 | Scenario      | Recovery Rate | Estimated Revenue Impact | Strategy Required                     |
-| Pessimistic  | 5%           | $26,610                  | Passive Email Automation             |
+|--------------|--------------|--------------------------|--------------------------------------|
+| Pessimistic  | 5%           | $26,310                  | Passive Email Automation             |
 | Realistic    | 15%          | $79,830                  | SMS + Dedicated CSM Outreach         |
-| Optimistic   | 30%          | $159,660                 | Full Account Management Intervention |
+| Optimistic   | 30%          | $157,860                 | Full Account Management Intervention |
+
 
 ---
 
